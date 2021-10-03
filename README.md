@@ -7,7 +7,7 @@ Este repositório é um microservice de usuários que trabalha com message broke
 ```bash
 $ npm install
 
-$ docker-compose up -d
+$  docker run --name "nome do se container" -e POSTGRES_USER=usuario -e POSTGRES_PASSWORD=senha -p 5432:5432 -d postgres
 ```
 
 ## Running the app
