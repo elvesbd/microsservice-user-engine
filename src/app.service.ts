@@ -12,7 +12,10 @@ export class AppService {
   ) {}
 
   async findUsers(): Promise<UserEntity[]> {
-    return await this.usersRepository.find({ where: { status: 'ACTIVE' } });
+    const users = await this.usersRepository.find({
+      where: { status: 'ACTIVE' },
+    });
+    return users;
   }
 
   async findUser(userId: number): Promise<User> {
@@ -42,6 +45,7 @@ export class AppService {
     if (!user) {
       throw new NotFoundException('User not found');
     }
+    console.log(userData);
   }
 
   async deleteUser(id: number): Promise<void> {
